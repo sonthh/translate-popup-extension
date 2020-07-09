@@ -21,8 +21,18 @@ export default class App extends Component {
 
     const doubleClick = () => {
       const word = window.getSelection().toString();
+
+      if (!word || word === '') {
+        return;
+      }
+
       this.setState({ word });
       this.fetchWord({ word });
+
+      const { showImages } = this.state;
+      if (showImages === true) {
+        this.fetchImages(word);
+      }
     }
     document.body.addEventListener('dblclick', doubleClick);
   }
@@ -39,13 +49,9 @@ export default class App extends Component {
     const { name, value } = e.target;
 
     if (name === 'showImages') {
-      let { word, showImages } = this.state;
+      let { showImages } = this.state;
       showImages = !showImages;
-
-      if (showImages === true) {
-        this.fetchImages(word);
-      }
-
+      
       this.setState({ showImages });
       localStorage.setItem('showImages', showImages);
     } else {
