@@ -168,6 +168,7 @@ export default class App extends Component {
       <div className='app'>
         <div className='translator'>
           <input
+            autoComplete='off'
             placeholder='Enter the word'
             onKeyPress={this.onKeyPress}
             onChange={this.onInputChange}
