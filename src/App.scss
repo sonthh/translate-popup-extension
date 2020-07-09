@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+}
+
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  background-color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #e6e6e6;
+}
+
+.app {
+  font-family: arial, helvetica, sans-serif;
+  color: #333333;
+  font-size: 12px;
+
+  width: 400px;
+  min-height: 60px;
+  padding: 10px;
+  border: 1px solid rgb(179, 174, 174);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  ::selection {
+    background: yellow;
+  }
+
+  .translator {
+    height: 27px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    input {
+      display: block;
+      width: 70%;
+      font-size: 14px;
+    }
+
+    input:focus {
+      outline: 0;
+    }
+
+    .btn-translate {
+      width: 25%;
+    }
+
+    .btn-back {
+      width: 12%;
+    }
+    button {
+      margin-left: 2px;
+      display: block;
+
+      border: 1px solid #3079ed;
+      color: #fff;
+      box-shadow: none;
+      background-color: #4d90fe;
+      background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed);
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 12px;
+      // font-weight: bold;
+      text-align: center;
+      white-space: nowrap;
+      outline: 0px;
+    }
+  }
+
+  .result {
+    margin-top: 5px;
+    height: 100%;
+
+    .sound-icon {
+      height: 16px;
+      cursor: pointer;
+      position: relative;
+      top: 3px;
+    }
+
+    .word {
+      color: red;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .three-dots {
+      color: red;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+
+    .lexical-category {
+      color: green;
+      font-weight: bold;
+      margin: 0 10px 0 10px;
+      text-transform: lowercase;
+    }
+
+    p.defination {
+      padding: 2px;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
+
+    p.defination:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+  .images {
+    a > img {
+      height: 60px;
+    }
+  }
+
+  .setting {
+    input[type="checkbox"] {
+      cursor: pointer;
+      margin: 0;
+      margin-right: 2px;
+      position: relative;
+      bottom: -1px;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
