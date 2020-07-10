@@ -4,9 +4,9 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "name": "Tra từ",
+  "name": "English translator",
   "version": "1.0",
-  "description": "Đây là Hồng Sơn extension",
+  "description": "Tra cứu từ vựng qua english definition và hình ảnh and more",
   "icons": {
     "128": "images/icon_128.png"
   },

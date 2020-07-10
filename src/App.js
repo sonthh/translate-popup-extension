@@ -51,7 +51,7 @@ export default class App extends Component {
     if (name === 'showImages') {
       let { showImages } = this.state;
       showImages = !showImages;
-      
+
       this.setState({ showImages });
       localStorage.setItem('showImages', showImages);
     } else {
@@ -72,11 +72,56 @@ export default class App extends Component {
       this.setState({ previousResult: currentResult, previousWord: currentResult[0]?.text });
       this.setState({ result: lexicalEntries });
 
+      // this.saveLocalStorage(lexicalEntries);
+
     } catch (err) {
       console.log(err);
       this.setState({ result: [] });
     }
   }
+
+  // saveLocalStorage = (result) => {
+  //   try {
+  //     let item = {};
+  //     item['lexicalEntries'] = [];
+
+  //     result.forEach(each => {
+  //       let { lexicalCategory, text, entries } = each;
+
+  //       entries = entries.map(each => {
+  //         let entry = {};
+  //         const { pronunciations, senses } = each;
+
+  //         senses.forEach(each => {
+  //           const { definitions } = each;
+  //           entry['definitions'] = definitions;
+  //         });
+
+  //         entry['pronunciation'] = pronunciations[1].phoneticSpelling;
+  //         entry['lexicalCategory'] = lexicalCategory.text;
+  //         entry['audioFile'] = pronunciations[1].audioFile;
+
+  //         return entry;
+  //       });
+
+  //       let lexicalEntry = {
+  //         entries,
+  //         text,
+  //       };
+
+  //       item['lexicalEntries'].push(lexicalEntry);
+  //     })
+
+  //     let json = localStorage.getItem('vocabularies');
+  //     let vocabularies = JSON.parse(json) || [];
+  //     vocabularies = [item].concat(vocabularies);
+  //     if (vocabularies.length > 10) {
+  //       vocabularies.pop();
+  //     }
+  //     localStorage.setItem('vocabularies', JSON.stringify(vocabularies));
+
+  //   } catch (err) { }
+  // }
 
   fetchImages = async (keyWord) => {
     try {
