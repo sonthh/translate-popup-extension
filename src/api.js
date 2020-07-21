@@ -13,7 +13,7 @@ export const getWord = async (params) => {
   } catch (err) {
     console.log(err);
 
-    Promise.reject(err)
+    return Promise.reject(err)
   }
 }
 
@@ -34,8 +34,6 @@ export const searchImages = async (keyWord) => {
 
     return data;
   } catch (err) {
-    console.log(err);
-
-    Promise.reject(err)
+    return Promise.reject(err)
   }
 }

@@ -75,7 +75,6 @@ export default class App extends Component {
       // this.saveLocalStorage(lexicalEntries);
 
     } catch (err) {
-      console.log(err);
       this.setState({ result: [] });
     }
   }
@@ -129,7 +128,6 @@ export default class App extends Component {
       this.setState({ imageSearch: data });
 
     } catch (err) {
-      console.log(err);
     }
   }
 
@@ -247,7 +245,7 @@ export default class App extends Component {
             Images
         </div>
         <div className='footer'>
-          <a title='Contact with me' href='mailto:tranhuuhongson@gmail.com'>tranhuuhongson@gmail.com</a>
+          <a title='Contact with me' href='main.html' target='_blank'>tranhuuhongson@gmail.com</a>
         </div>
       </div>
     );
